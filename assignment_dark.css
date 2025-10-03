@@ -1,0 +1,261 @@
+/* Reusable Flexbox Utility Classes */
+.flex-container {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #4511a5b0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/ChatGPT Image Oct 3, 2025, 10_20_22 AM.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    background-image: linear-gradient(to right, #672cd6d5 0%, #672cd6d5 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    transition: background-size 0.5s ease;
+}
+
+.navbar a.active {
+    outline: 2px solid #672cd6d5;
+    outline-offset: -2px;
+}
+
+.navbar a:hover {
+    background-size: 100% 100%;
+    color: black;
+}
+
+/* Textbox styles */
+input[type="text"], textarea {
+    border: 2px solid #4CAF50;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #45a049;
+    outline: none;
+}
+
+/* About section styles */
+.about-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-section img {
+    flex: 0 0 200px;
+    width: auto;
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.about-section p {
+    flex: 1;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* CV section styles */
+.cv-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-box {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+.text-box h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* Portfolio section */
+.portfolio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-section img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    max-width: 860px;
+}
+
+.image-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-pair img {
+    max-width: 400px;
+    width: auto;
+    height: auto;
+}
+
+/* Dark mode base styles */
+body {
+    background-color: #121212;
+    background-image: url('../images/background.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+ul {
+    color: #e0e0e0;
+}
+
+a {
+    color: #07e0f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding: 10px 0;
+    }
+
+    .cv-section {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        gap: 10px;
+    }
+
+    .portfolio-section {
+        gap: 10px;
+    }
+
+    .image-pair img {
+        max-width: 100%;
+    }
+}
